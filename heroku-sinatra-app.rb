@@ -7,7 +7,7 @@
 #
 require 'rubygems'
 require 'sinatra'
-
+require "haml"
 configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
@@ -17,9 +17,12 @@ configure :production do
 end
 
 # Quick test
+get '/style.css' do
+  sass :style
+end
+
 get '/' do
-  "Congradulations!
-   You're running a Sinatra application on Heroku!"
+  haml :index
 end
 
 # Test at <appname>.heroku.com
