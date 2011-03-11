@@ -3,10 +3,13 @@
 
 %html
   %head
-    %title Unirandom
+    %title Sinatrandoms
     %meta{:"http-equiv" => "Content-Type", :content => "text/html", :charset => "utf-8" }
     %link{:rel => "stylesheet", :type => "text/css", :href => "/style.css"}
   %body
     .wrapper
       %h1 Translate this?
       != yield
+      
+      .credit
+        %a{:title => "milligramme.cc",:href => "http://www.milligramme.cc/" }2011 © milligramme
