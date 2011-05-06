@@ -25,6 +25,8 @@ get '/' do
   haml :index
 end
 
+get '/trans' do
+end
 # Test at <appname>.heroku.com
 
 # You can see all your app specific information this way.
