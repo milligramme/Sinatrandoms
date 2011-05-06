@@ -8,7 +8,8 @@
     %link{:rel => "stylesheet", :type => "text/css", :href => "/style.css"}
   %body
     .wrapper
-      %h1 Translate this?
+      %h1
+        %a(href="https://www.googleapis.com/language/translate/v2?key=milligramme.cc@gamil.com&q=hello%20world&source=en&target=ja") Translate this?
       != yield
       
       .credit
