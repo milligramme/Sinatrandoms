@@ -1,7 +1,7 @@
 :javascript
   $(function(){
     var temp_words = ""
-    for (var i=0, iL=600; i < iL ; i++) {
+    for (var i=0, iL=100; i < iL ; i++) {
       var startCode = (""+Math.random()).substr(2);
       
       temp_words += String.fromCharCode("0x"+startCode);
@@ -12,5 +12,5 @@
       var get_words = $('.words').text()
       location.href = '/translate?q='+encodeURI(get_words);
     })
-  })();
+  });
 .words

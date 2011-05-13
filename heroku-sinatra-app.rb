@@ -16,6 +16,22 @@ configure :production do
   #       from ENV['DATABASE_URI'] (see /env route below)
 end
 
+helpers do 
+  def google_translate (words)
+    {
+    :href => "https://www.googleapis.com/language/translate/v2?key=AIzaSyBqpzeN8u93VFsqG8Fe58odm_IFNPPz5BI&source=zh-CN&target=ja",
+    :q => words,
+    # :source => 'en',
+    :target => 'ja'
+    }
+   end
+end
+
+get '/translate' do
+  tran_words = params[:q]
+  haml :index ,:local => {:words => google_translate(tran_words)}
+end
+
 # Quick test
 get '/style.css' do
   sass :style
@@ -24,6 +40,7 @@ end
 get '/' do
   haml :index
 end
+
 
 # Test at <appname>.heroku.com
 
