@@ -1,9 +1,16 @@
+:javascript
+  $(function(){
+    var temp_words = ""
+    for (var i=0, iL=600; i < iL ; i++) {
+      var startCode = (""+Math.random()).substr(2);
+      
+      temp_words += String.fromCharCode("0x"+startCode);
+    };
+    $('.words').text(temp_words);
+
+    $('h1').click(function(){
+      var get_words = $('.words').text()
+      location.href = '/translate?q='+encodeURI(get_words);
+    })
+  })();
 .words
-  :javascript
-    (function(){
-      for (var i=0, iL=1200; i < iL ; i++) {
-      	var startCode = (""+Math.random()).substr(2);
-      	document.write(String.fromCharCode("0x"+startCode));
-      };      
-    })();
-  
